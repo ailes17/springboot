@@ -14,9 +14,10 @@ import org.springframework.core.io.ClassPathResource;
 public class EnvConfig {
 
     @Profile({"default"})
+    @Bean
     public static PropertySourcesPlaceholderConfigurer localPropertyConfigurer() throws IOException {
         final PropertySourcesPlaceholderConfigurer  props = new PropertySourcesPlaceholderConfigurer ();
-        props.setLocations(new ClassPathResource("application-child1.properties"));
+        props.setLocations(new ClassPathResource("application.properties"));
         return props;
     }
 }
